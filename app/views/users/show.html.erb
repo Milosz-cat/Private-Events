@@ -1,2 +1,13 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+<% if @events.any? %>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <strong><%= event.title %></strong> –
+        <%= event.date.strftime("%Y-%m-%d %H:%M") %> –
+        <%= event.location %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
