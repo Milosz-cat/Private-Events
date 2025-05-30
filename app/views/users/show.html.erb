@@ -4,10 +4,12 @@
   <ul>
     <% @events.each do |event| %>
       <li>
-        <strong><%= event.title %></strong> –
-        <%= event.date.strftime("%Y-%m-%d %H:%M") %> –
-        <%= event.location %>
+        <strong><%= link_to event.title, event_path(event) %></strong>
       </li>
     <% end %>
   </ul>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Create new event", new_event_path %>
 <% end %>

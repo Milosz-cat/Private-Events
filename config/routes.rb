@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get "users/show"
   devise_for :users
 
-  resources :events, only: [ :index, :new, :create ]
+  resources :events, only: [ :index, :show, :new, :create ]
+  resources :users, only: [ :show ]
   root "events#index"
 
   get "up" => "rails/health#show", as: :rails_health_check

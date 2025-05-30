@@ -2,5 +2,6 @@
 <p>Find me in app/views/events/index.html.erb</p>
 
 <% if user_signed_in? %>
-  <%= link_to "Dodaj nowe wydarzenie", new_event_path %>
+  <%= link_to "Create new event", new_event_path %>
+  <%= link_to "\n Go to profile section", user_path(current_user) %>
 <% end %>
